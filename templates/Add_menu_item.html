@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family : Arial, sans-serif;
+            margin : 0;
+            padding : 0;
+        }
+        header {
+            background-color : #BE3455;
+            color : white;
+            text-align : center;
+        }
+        nav a {
+            color : white;
+        }
+        footer {
+            bottom : 0;
+        }
+        /* Style for the form */
+form {
+    margin: 20px;
+}
+
+/* Style for the table */
+table {
+    width: auto;
+}
+
+/* Style for table cells */
+td {
+    padding: 8px;
+}
+
+/* Style for input fields */
+input[type="text"] {
+    width: auto;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Hover effect for the submit button */
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="Heading">Online Restaurant</h1> <h4 style="margin-left:1500px;">Current User : {{ name }}</h4><br>
+    <nav>
+        <a href="/" style="padding-right : 20px; padding-left : 20px;">Home</a>
+        <a href="#" style="padding-right : 20px; padding-left : 20px;">About Us</a>
+        <a href="manageUsers" style="padding-right : 20px; padding-left : 20px;">Manage Users</a>
+        <a href="userLogout" style="padding-right : 20px; padding-left : 20px;">Logout</a>
+    </nav>
+</header>
+<br>
+<form action="AddItem" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Enter Item Name : </td>
+            <td><input type="text" name="item_name"></td>
+        </tr>
+        <tr>
+            <td>Enter Item Description : </td>
+            <td><input type="text" name="item_description"></td>
+        </tr>
+        <tr>
+            <td>Enter Item Price (in Rupees) : </td>
+            <td><input type="text" name="item_price"></td>
+        </tr>
+        <tr>
+            <td>Please Select an image for display : </td>
+            <td><input type="file" name="photo" style="width:300px"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:160px;"><button type="submit" class="btn btn-primary" >Submit</button></td>
+        </tr>
+
+    </table>
+</form>
+<br>
+<footer>
+    <p>&copy; 2024 Online Restaurant. All rights reserved.</p>
+</footer>
+<script>
+    setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 3000)
+</script>
+</body>
+</html>

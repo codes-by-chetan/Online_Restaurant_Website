@@ -1,0 +1,25 @@
+<!--{% if messages %}-->
+<!--{% for i in messages %}-->
+<!--<div class="alert {{i.tags}}" role="alert" >-->
+<!--    {{i}}-->
+<!--</div>-->
+<!--{% endfor %}-->
+<!--<script>-->
+<!--    setTimeout(function(){-->
+<!--        if ($('#msg').length > 0) {-->
+<!--            $('#msg').remove();-->
+<!--            $('.errorlist').closest('.form-group').remove();-->
+<!--        }-->
+<!--    }, 4000);-->
+<!--</script>-->
+<!--{% endif %}-->
+
+{% if messages %}
+<div id="msg">
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
