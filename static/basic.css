@@ -1,11 +1,3 @@
-.container > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
- 
-}
-
 html,body {
   font-family: Arial, sans-serif;
   box-sizing: border-box;
@@ -15,18 +7,110 @@ html,body {
   margin: 0px;
 }
 
-.container > div:nth-child(1n) {
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100%; 
+  display: grid;
+  padding: 0px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 40px auto 40px; 
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 90%;
   background-color: #BE3455;	
 }
 
-.container > div:nth-child(3n) {
+.menu {
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 80%;
+  text-shadow: 0 0 5px black;
+  background-color: #BE3455;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f896ad;
+  font-size: 110%;
+}
+
+.content {
+  grid-row: 3;
+  display: grid ;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: space-between;
+  border: 2px solid black;
   background-color: #ffffff;
+  margin: 3px;
+
+  /* grid-row: ; */
+}
+.menu-hint {
+  display: block;
+}
+.menu-container {
+  width: 22vw;
+  height: 40vh;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+  #menu-item-img {
+    width: 40%;
+    height: 50%;
+    border: 2px solid black;
+
+  }
+
+
+/* img {
+  width: 120px;
+} */
+.footer {
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BE3455;
+
 }
 
-.container > div:nth-child(2n) {
+
+#menu-item-img {
+  width: 100px;
+}
+/* Button styles */
+.add-to-cart a {
+  display: inline-block;
+  padding: 8px 16px;
   background-color: #BE3455;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.container > div:nth-child(4n) {
-  background-color: #BE3455;
+.add-to-cart a:hover {
+  background-color: #A82A45;
 }
