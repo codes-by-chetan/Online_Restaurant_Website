@@ -18,7 +18,8 @@ body {
   display: grid;
   padding: 0px;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 40px auto 40px; 
+  grid-template-rows: 100px 40px auto 40px;
+  box-sizing : box-border;
 }
 
 .header {
@@ -33,7 +34,7 @@ body {
 .menu {
   grid-row: 2;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: white;
   font-size: 80%;
