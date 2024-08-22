@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="{%static 'basic.css'%}">
+        <script src="{%static 'home.js'%}" defer></script>
         <style>
             
         </style>
@@ -14,7 +15,7 @@
     <body>
         <div class="container">
             <div class="header"><h1 class="Heading">Online Restaurant</h1></div>
-            <div class="menu">
+            <div class="nav-bar">
                 <a href="#" >Menu</a>
                 <a href="#" >Cart</a>
                 <a href="#" >About Us</a>
@@ -23,28 +24,34 @@
             </div>
             
             <div class="content">
-                <h3 class="menu-hint">Take a look at our menu : </h3><br>
-                
+                <h3 class="menu-hint">Take a look at our menu : </h3>
+                <div class="menu-section">
+                    
+                    
 
                     {% for i in data %}
                     <div class="menu-container"><!-- Added flex container -->
-                    <!-- <div class="flexbox"> -->
-                        <figure id="menu-item-img">
-                            <!-- <img src="{{ i.item_photo }}" alt="Item photo"> -->
-                        </figure>
-                        <div class="item-details">
-                            <p><strong>{{ i.item_name }}</strong></p>
-                            <!-- <p>{{ i.item_description }}</p> -->
-                            <p class="add-to-cart"><a href="#" id="loginLink" data-toggle="modal" data-target="#loginModal" >Add to cart @ &#8377;{{ i.item_price }}</a></p> <!-- Display price with rupees sign -->
-                        </div>
-                    <!-- </div> -->
-                </div><!-- Added closing tag for flex container -->
-                {% endfor %}
+                        <!-- <div class="flexbox"> -->
+                            <figure id="menu-item-img">
+                                <img src="{{ i.item_photo }}" alt="Item photo">
+                            </figure>
+                            <div class="item-details">
+                                <p class="item-name"><strong>{{ i.item_name }}</strong></p>
+                                <p class="item-desc-paragraph">{{ i.item_description }}</p>
+                                <p class="add-to-cart"><a href="#" id="loginLink" data-toggle="modal" data-target="#loginModal" >Add to cart @ &#8377;{{ i.item_price }}</a></p> <!-- Display price with rupees sign -->
+                            </div>
+                        <!-- </div> -->
+                    </div><!-- Added closing tag for flex container -->
+                    {% endfor %}
+                </div>
 
                 
                 
             </div>
             <div class="footer">FOOTER</div>
         </div>
+        <script>
+
+        </script>
     </body>
 </html>

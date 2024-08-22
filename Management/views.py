@@ -20,6 +20,7 @@ def index(request):
             return render(request, 'userHomepage.html', {'name': request.user, 'data': data})
     fm = AuthenticationForm()
     form = signUp()
+    # return render(request,'Homepage_copy.html',{'data':data,'loginform':fm,'signupform':form})
     return render(request,'Homepage.html',{'data':data,'loginform':fm,'signupform':form})
 
 def addItem(request):
